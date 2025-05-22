@@ -1,0 +1,14 @@
+D:\Projects\mtb\MTB_Mapper\bin\Debug\net8.0\MTB_Mapper.deps.json
+D:\Projects\mtb\MTB_Mapper\bin\Debug\net8.0\MTB_Mapper.dll
+D:\Projects\mtb\MTB_Mapper\bin\Debug\net8.0\MTB_Mapper.pdb
+D:\Projects\mtb\MTB_Mapper\obj\Debug\net8.0\MTB_Mapper.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\mtb\MTB_Mapper\obj\Debug\net8.0\MTB_Mapper.AssemblyInfoInputs.cache
+D:\Projects\mtb\MTB_Mapper\obj\Debug\net8.0\MTB_Mapper.AssemblyInfo.cs
+D:\Projects\mtb\MTB_Mapper\obj\Debug\net8.0\MTB_Mapper.csproj.CoreCompileInputs.cache
+D:\Projects\mtb\MTB_Mapper\obj\Debug\net8.0\MTB_Mapper.sourcelink.json
+D:\Projects\mtb\MTB_Mapper\obj\Debug\net8.0\MTB_Mapper.dll
+D:\Projects\mtb\MTB_Mapper\obj\Debug\net8.0\refint\MTB_Mapper.dll
+D:\Projects\mtb\MTB_Mapper\obj\Debug\net8.0\MTB_Mapper.pdb
+D:\Projects\mtb\MTB_Mapper\obj\Debug\net8.0\ref\MTB_Mapper.dll
+D:\Projects\mtb\MTB_Mapper\bin\Debug\net8.0\MTB_Mapper.xml
+D:\Projects\mtb\MTB_Mapper\obj\Debug\net8.0\MTB_Mapper.csproj.AssemblyReference.cache

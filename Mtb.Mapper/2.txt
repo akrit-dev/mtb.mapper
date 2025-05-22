@@ -1,0 +1,76 @@
+0: Emit, opcode:newobj, con:Void .ctor();
+
+5: Emit, opcode:dup;
+6: Emit, opcode:ldarg.0;
+
+7: Emit, opcode:callvirt, meth:Int32 get_Id();
+12: Emit, opcode:callvirt, meth:Void set_Id(Int32);
+
+17: Emit, opcode:dup;
+18: Emit, opcode:ldarg.0;
+
+19: Emit, opcode:callvirt, meth:System.Guid get_UniqueId();
+24: Emit, opcode:callvirt, meth:Void set_UniqueId(System.Guid);
+
+29: Emit, opcode:dup;
+30: Emit, opcode:ldarg.0;
+
+31: Emit, opcode:callvirt, meth:System.String get_FullName();
+36: Emit, opcode:callvirt, meth:Void set_Name(System.String);
+41: Emit, opcode:dup;
+42: Emit, opcode:ldarg.0;
+43: Emit, opcode:callvirt, meth:System.DateTime get_BirthDate();
+48: Emit, opcode:callvirt, meth:Void set_BirthDate(System.DateTime);
+53: Emit, opcode:dup;
+54: Emit, opcode:ldarg.0;
+55: Emit, opcode:callvirt, meth:Boolean get_IsActive();
+60: Emit, opcode:callvirt, meth:Void set_IsActive(Boolean);
+65: Emit, opcode:dup;
+66: Emit, opcode:ldarg.0;
+67: Emit, opcode:callvirt, meth:System.Nullable`1[System.Double] get_Score();
+72: Emit, opcode:callvirt, meth:Void set_Score(System.Nullable`1[System.Double]);
+77: Emit, opcode:dup;
+78: Emit, opcode:ldarg.0;
+79: Emit, opcode:callvirt, meth:Char get_Gender();
+84: Emit, opcode:callvirt, meth:Void set_Gender(Char);
+89: Emit, opcode:dup;
+90: Emit, opcode:ldarg.0;
+91: Emit, opcode:callvirt, meth:Contracts.TestClasses.Source.SourceAddress get_Address();
+96: Emit, opcode:call, meth:Contracts.TestClasses.Target.TargetAddress Map(Contracts.TestClasses.Source.SourceAddress);
+101: Emit, opcode:callvirt, meth:Void set_Address(Contracts.TestClasses.Target.TargetAddress);
+106: Emit, opcode:dup;
+107: Emit, opcode:ldarg.0;
+108: Emit, opcode:callvirt, meth:System.Collections.Generic.List`1[Contracts.TestClasses.Source.SourceOrder] get_Orders();
+113: DeclareLocal, localType:Contracts.TestClasses.Target.Target, pinned:False;
+113: DeclareLocal, localType:System.Collections.Generic.List`1[Contracts.TestClasses.Source.SourceOrder], pinned:False;
+113: DeclareLocal, localType:System.Func`2[Contracts.TestClasses.Source.SourceOrder,Contracts.TestClasses.Target.TargetOrder], pinned:False;
+113: DeclareLocal, localType:System.Collections.Generic.List`1[Contracts.TestClasses.Target.TargetOrder], pinned:False;
+113: Emit, opcode:stloc, local:System.Collections.Generic.List`1[Contracts.TestClasses.Source.SourceOrder] (1);
+114: Emit, opcode:stloc, local:Contracts.TestClasses.Target.Target (0);
+115: Emit, opcode:ldloc, local:System.Collections.Generic.List`1[Contracts.TestClasses.Source.SourceOrder] (1);
+116: DefineLabel;
+116: DefineLabel;
+116: Emit, opcode:brtrue.s, label:System.Reflection.Emit.Label;
+118: Emit, opcode:ldloc, local:Contracts.TestClasses.Target.Target (0);
+119: Emit, opcode:ldnull;
+120: Emit, opcode:callvirt, meth:Void set_Orders(System.Collections.Generic.List`1[Contracts.TestClasses.Target.TargetOrder]);
+125: Emit, opcode:br.s, label:System.Reflection.Emit.Label;
+127: MarkLabel, loc:System.Reflection.Emit.Label;
+127: Emit, opcode:ldnull;
+128: Emit, opcode:ldftn, meth:Contracts.TestClasses.Target.TargetOrder Map(Contracts.TestClasses.Source.SourceOrder);
+134: Emit, opcode:newobj, con:Void .ctor(System.Object, IntPtr);
+139: Emit, opcode:stloc, local:System.Func`2[Contracts.TestClasses.Source.SourceOrder,Contracts.TestClasses.Target.TargetOrder] (2);
+140: Emit, opcode:ldloc, local:System.Collections.Generic.List`1[Contracts.TestClasses.Source.SourceOrder] (1);
+141: Emit, opcode:ldloc, local:System.Func`2[Contracts.TestClasses.Source.SourceOrder,Contracts.TestClasses.Target.TargetOrder] (2);
+142: Emit, opcode:call, meth:System.Collections.Generic.IEnumerable`1[Contracts.TestClasses.Target.TargetOrder] Select[SourceOrder,TargetOrder](System.Collections.Generic.IEnumerable`1[Contracts.TestClasses.Source.SourceOrder], System.Func`2[Contracts.TestClasses.Source.SourceOrder,Contracts.TestClasses.Target.TargetOrder]);
+147: Emit, opcode:call, meth:System.Collections.Generic.List`1[Contracts.TestClasses.Target.TargetOrder] ToList[TargetOrder](System.Collections.Generic.IEnumerable`1[Contracts.TestClasses.Target.TargetOrder]);
+152: Emit, opcode:stloc, local:System.Collections.Generic.List`1[Contracts.TestClasses.Target.TargetOrder] (3);
+153: Emit, opcode:ldloc, local:Contracts.TestClasses.Target.Target (0);
+154: Emit, opcode:ldloc, local:System.Collections.Generic.List`1[Contracts.TestClasses.Target.TargetOrder] (3);
+155: Emit, opcode:callvirt, meth:Void set_Orders(System.Collections.Generic.List`1[Contracts.TestClasses.Target.TargetOrder]);
+160: MarkLabel, loc:System.Reflection.Emit.Label;
+160: Emit, opcode:dup;
+161: Emit, opcode:ldarg.0;
+162: Emit, opcode:callvirt, meth:System.Collections.Generic.List`1[System.Int32] get_Scores();
+167: Emit, opcode:callvirt, meth:Void set_Scores(System.Collections.Generic.List`1[System.Int32]);
+172: Emit, opcode:ret;

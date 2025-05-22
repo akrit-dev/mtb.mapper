@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mtb.Mapper</name>
+    </assembly>
+    <members>
+        <member name="M:Mtb.Mapper.Core.EmitHelper.EmitDebugWriteLine(Mtb.Mapper.Core.IlGeneratorLogWrapper,System.String,System.Reflection.Emit.LocalBuilder)">
+            <summary>
+            Печатает в консоль форматированную строку с одним аргументом – значением локальной переменной.
+            </summary>
+        </member>
+        <member name="M:Mtb.Mapper.Core.EmitHelper.EmitDebugStack(Mtb.Mapper.Core.IlGeneratorLogWrapper)">
+            <summary>
+            Выводит в консоль текущую глубину стека, отслеживаемую IlGeneratorLogWrapper.
+            </summary>
+        </member>
+        <member name="M:Mtb.Mapper.Core.EmitHelper.For(Mtb.Mapper.Core.IlGeneratorLogWrapper,System.Int32,System.Int32,System.Int32,System.Action{Mtb.Mapper.Core.IlGeneratorLogWrapper,System.Reflection.Emit.LocalBuilder})">
+            <summary>
+                Emits a for-loop from <paramref name="start" /> (inclusive) to <paramref name="end" /> (exclusive),
+                with a custom <paramref name="step" />. The <paramref name="body" /> action receives the ILGenerator and the loop
+                index local.
+            </summary>
+        </member>
+        <member name="M:Mtb.Mapper.Core.EmitHelper.ForEachArray``1(Mtb.Mapper.Core.IlGeneratorLogWrapper,System.Reflection.Emit.LocalBuilder,System.Action{Mtb.Mapper.Core.IlGeneratorLogWrapper,System.Reflection.Emit.LocalBuilder})">
+            <summary>
+                Emits a foreach-style loop over an array local. Body receives ILGenerator and the current element local.
+            </summary>
+        </member>
+        <member name="M:Mtb.Mapper.Core.EmitHelper.ForEach``1(Mtb.Mapper.Core.IlGeneratorLogWrapper,System.Action{Mtb.Mapper.Core.IlGeneratorLogWrapper},System.Action{Mtb.Mapper.Core.IlGeneratorLogWrapper,System.Reflection.Emit.LocalBuilder})">
+            <summary>
+            Emits a foreach-style loop over an IEnumerable T.
+            Body receives ILGenerator and the current element local.
+            Automatically disposes the enumerator if IDisposable.
+            </summary>
+        </member>
+        <member name="M:Mtb.Mapper.Core.EmitHelper.ForEach(Mtb.Mapper.Core.IlGeneratorLogWrapper,System.Type,System.Action{Mtb.Mapper.Core.IlGeneratorLogWrapper},System.Action{Mtb.Mapper.Core.IlGeneratorLogWrapper,System.Reflection.Emit.LocalBuilder,System.Reflection.Emit.LocalBuilder})">
+            <summary>
+            Emits a foreach-style loop over an IEnumerable T given as Type at runtime,
+            providing both element and index.
+            </summary>
+        </member>
+        <member name="M:Mtb.Mapper.Core.EmitHelper.ForEach``1(Mtb.Mapper.Core.IlGeneratorLogWrapper,System.Action{Mtb.Mapper.Core.IlGeneratorLogWrapper},System.Action{Mtb.Mapper.Core.IlGeneratorLogWrapper,System.Reflection.Emit.LocalBuilder,System.Reflection.Emit.LocalBuilder})">
+            <summary>
+            Emits a foreach-style loop over an IEnumerable T, providing both element and index.
+            Automatically disposes the enumerator if IDisposable.
+            </summary>
+        </member>
+        <member name="M:Mtb.Mapper.Core.EmitHelper.While(Mtb.Mapper.Core.IlGeneratorLogWrapper,System.Action{Mtb.Mapper.Core.IlGeneratorLogWrapper},System.Action{Mtb.Mapper.Core.IlGeneratorLogWrapper})">
+            <summary>
+                Emits a while-loop based on <paramref name="emitCondition" />. Loop continues while condition is true.
+            </summary>
+        </member>
+        <member name="M:Mtb.Mapper.Core.EmitHelper.DoWhile(Mtb.Mapper.Core.IlGeneratorLogWrapper,System.Action{Mtb.Mapper.Core.IlGeneratorLogWrapper},System.Action{Mtb.Mapper.Core.IlGeneratorLogWrapper})">
+            <summary>
+                Emits a do-while loop: body executes at least once and repeats while condition is true.
+            </summary>
+        </member>
+        <member name="M:Mtb.Mapper.Core.EmitHelper.If(Mtb.Mapper.Core.IlGeneratorLogWrapper,System.Action{Mtb.Mapper.Core.IlGeneratorLogWrapper},System.Action{Mtb.Mapper.Core.IlGeneratorLogWrapper},System.Action{Mtb.Mapper.Core.IlGeneratorLogWrapper})">
+            <summary>
+                Emits an if-then-else based on <paramref name="emitCondition" />. Condition must push int32 (0=false).
+            </summary>
+        </member>
+        <member name="M:Mtb.Mapper.Core.EmitHelper.Switch(Mtb.Mapper.Core.IlGeneratorLogWrapper,System.Action{Mtb.Mapper.Core.IlGeneratorLogWrapper},System.Collections.Generic.IDictionary{System.Int32,System.Action{Mtb.Mapper.Core.IlGeneratorLogWrapper}},System.Action{Mtb.Mapper.Core.IlGeneratorLogWrapper})">
+            <summary>
+                Emits a switch/case for integer values. Cases map to actions; defaultCase is optional.
+            </summary>
+        </member>
+        <member name="M:Mtb.Mapper.Core.EmitHelper.TryFinally(Mtb.Mapper.Core.IlGeneratorLogWrapper,System.Action{Mtb.Mapper.Core.IlGeneratorLogWrapper},System.Action{Mtb.Mapper.Core.IlGeneratorLogWrapper})">
+            <summary>
+                Emits a try/finally block.
+            </summary>
+        </member>
+        <member name="M:Mtb.Mapper.Core.EmitHelper.TryCatch``1(Mtb.Mapper.Core.IlGeneratorLogWrapper,System.Action{Mtb.Mapper.Core.IlGeneratorLogWrapper},System.Action{Mtb.Mapper.Core.IlGeneratorLogWrapper,System.Reflection.Emit.LocalBuilder})">
+            <summary>
+                Emits a try/catch block for <typeparamref name="TException" />. Catch body receives the exception local.
+            </summary>
+        </member>
+        <member name="M:Mtb.Mapper.Core.EmitHelper.LoadInt(Mtb.Mapper.Core.IlGeneratorLogWrapper,System.Int32)">
+            <summary>
+                Emits an integer constant onto the evaluation stack.
+            </summary>
+        </member>
+        <member name="M:Mtb.Mapper.Core.EmitHelper.Call(Mtb.Mapper.Core.IlGeneratorLogWrapper,System.Reflection.MethodInfo,System.Type[],System.Boolean)">
+            <summary>
+                Emits a call or callvirt instruction for the specified method.
+            </summary>
+        </member>
+        <member name="T:Mtb.Mapper.Core.IlGeneratorLogWrapper">
+            <summary>
+            
+            </summary>
+            <param name="ilGenerator"></param>
+        </member>
+        <member name="M:Mtb.Mapper.Core.IlGeneratorLogWrapper.#ctor(System.Reflection.Emit.ILGenerator)">
+            <summary>
+            
+            </summary>
+            <param name="ilGenerator"></param>
+        </member>
+        <member name="M:Mtb.Mapper.Core.IlGeneratorLogWrapper.EmitDebugWriteLine(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="T:Mtb.Mapper.Core.Mapper`2">
+            <summary>
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <typeparam name="TTarget"></typeparam>
+        </member>
+        <member name="M:Mtb.Mapper.Core.Mapper`2.ConfigureMapping(System.Action{Mtb.Mapper.Core.MappingConfig{`0,`1}})">
+            <summary>
+            </summary>
+            <param name="configAction"></param>
+        </member>
+        <member name="M:Mtb.Mapper.Core.Mapper`2.Map(`0)">
+            <summary>
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Mtb.Mapper.Core.Mapper`2.IsSimpleType(System.Type)">
+            <summary>
+                TODO поддержка пользовательских стуктур
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mtb.Mapper.Core.Mapper`2.IsEnumerableType(System.Type)">
+            <summary>
+                Проверяет, является ли переданный тип массивом\списком
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mtb.Mapper.Core.Mapper`2.IsDictionaryType(System.Type)">
+            <summary>
+                Проверяет, является ли переданный тип словарем
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mtb.Mapper.Core.Mapper`2.GetElementType(System.Type)">
+            <summary>
+                Возвращает тип внутреннего элемента коллекции
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mtb.Mapper.Core.Mapper`2.GetDictionaryKeyType(System.Type)">
+            <summary>
+            Возвращает TKey для IDictionary&lt;TKey, TValue&gt; или IReadOnlyDictionary&lt;TKey, TValue&gt;.
+            Если тип не является словарём — возвращает null.
+            </summary>
+        </member>
+        <member name="M:Mtb.Mapper.Core.Mapper`2.GetDictionaryValueType(System.Type)">
+            <summary>
+            Возвращает TValue для IDictionary&lt;TKey, TValue&gt; или IReadOnlyDictionary&lt;TKey, TValue&gt;.
+            Если тип не является словарём — возвращает null.
+            </summary>
+        </member>
+        <member name="T:Mtb.Mapper.Core.KeySelectorsHolder`2">
+            <summary>
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="F:Mtb.Mapper.Core.KeySelectorsHolder`2.KeySelectorDelegate">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Mtb.Mapper.Core.ValueSelectorsHolder`3">
+            <summary>
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TSourceValue"></typeparam>
+            <typeparam name="TTargetValue"></typeparam>
+        </member>
+        <member name="T:Mtb.Mapper.Core.MappingConfig`2">
+            <summary>
+            
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <typeparam name="TTarget"></typeparam>
+        </member>
+        <member name="P:Mtb.Mapper.Core.MappingConfig`2.PropertyMappings">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

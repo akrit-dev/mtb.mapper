@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "eqKA/4UrERc=",
+  "success": true,
+  "projectFilePath": "D:\\Projects\\mtb.mapper\\Mtb.Mapper\\Mtb.Mapper.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\aKrit\\.nuget\\packages\\mono.reflection\\2.0.0\\mono.reflection.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
